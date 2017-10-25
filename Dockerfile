@@ -21,8 +21,6 @@ ENV SOLR_USER="solr" \
     SOLR_GID="8983" \
     SOLR_VERSION="5.2.1" \
     SOLR_URL="${SOLR_DOWNLOAD_SERVER:-https://archive.apache.org/dist/lucene/solr}/5.2.1/solr-5.2.1.tgz" \
-    SOLR_SHA256="2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1" \
-    SOLR_KEYS="5F55943E13D49059D3F342777186B06E1ED139E7" \
     PATH="/opt/solr/bin:/opt/docker-solr/scripts:$PATH"
 
 RUN addgroup -S -g $SOLR_GID $SOLR_GROUP && \
