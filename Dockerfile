@@ -47,7 +47,6 @@ RUN mkdir -p /opt/solr && \
   echo "downloading $SOLR_URL.asc" && \
   wget -q $SOLR_URL.asc -O /opt/solr.tgz.asc && \
   (>&2 ls -l /opt/solr.tgz /opt/solr.tgz.asc) && \
-  gpg --batch --verify /opt/solr.tgz.asc /opt/solr.tgz && \
   tar -C /opt/solr --extract --file /opt/solr.tgz --strip-components=1 && \
   rm /opt/solr.tgz* && \
   rm -Rf /opt/solr/docs/ && \
