@@ -29,7 +29,7 @@ if [ -z "${MY_SOLR_PID_DIR:-}" ]; then
 fi
 
 echo "Running solr in the background. Logs are in $MY_SOLR_LOGS_DIR"
-SOLR_OPTS=$MY_SOLR_OPTS solr start
+SOLR_OPTS=$MY_SOLR_OPTS solr start -Dsolr.clustering.enabled=true
 max_try=${MAX_TRY:-12}
 wait_seconds=${WAIT_SECONDS:-5}
 if ! /opt/docker-solr/scripts/wait-for-solr.sh --max-attempts "$max_try" --wait-seconds "$wait_seconds"; then
